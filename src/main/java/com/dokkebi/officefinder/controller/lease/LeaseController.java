@@ -83,7 +83,7 @@ public class LeaseController {
 
   @Operation(summary = "오피스에 신청된 임대 수락", description = "자신의 오피스에 신청된 임대 요청을 수락한다.")
   @PreAuthorize("hasRole('OFFICE_OWNER')")
-  @PutMapping("/agents/office/lease-requests/{leaseId}/accept")
+  @PutMapping("/agents/offices/lease-requests/{leaseId}/accept")
   public ResponseEntity<Object> acceptRequest(Principal principal, @PathVariable Long leaseId) {
     leaseService.acceptLeaseRequest(leaseId);
 
